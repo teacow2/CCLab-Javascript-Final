@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>WootCapital!</title>
+	<link rel="stylesheet" href="css/style.css">
+	<meta charset = "utf-8">	
+</head>
+<body>
+	<div class="accountHeader"> 
+		<p class="woot"> Woot Capital! </p>
+	</div>
+	<div class="container">
+		<div class = "box" id="assets">
+			<span><h2> Current Stocks </h2></span>
+			<ul class="stocks">
+				<li> Diadem Cap. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class = "priceDisplay price1">  PriceHere  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class = "oldPriceDisplay oldPrice1">  PriceHere  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class = "olderPriceDisplay olderPrice1">  PriceHere  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img class = "moreInfo" id="MIstock1" src = "images/moreinfo.jpg" /></li>
+				<li> Stone Invest. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class = "priceDisplay price2">  PriceHere  </span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class = "oldPriceDisplay oldPrice2">  PriceHere  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class = "olderPriceDisplay olderPrice2">  PriceHere  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img class = "moreInfo" id="MIstock2" src = "images/moreinfo.jpg" /></li>
+				<li> Delroy Part. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class = "priceDisplay price3">  PriceHere  </span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class = "oldPriceDisplay oldPrice3">  PriceHere  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class = "olderPriceDisplay olderPrice3">  PriceHere  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img class = "moreInfo" id="MIstock3" src = "images/moreinfo.jpg" /></li></li>	
+			<span><h2> Capital Sources </h2></span>
+			<ul class="capital">
+				<li> Wilde Cap.  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class = "priceDisplay" id="borrow1">  PriceHere  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img class = "moreInfo" id="CPSource1" src = "images/capital.jpg" /></li>
+				<li> Int. Fed. Cons.  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class = "priceDisplay" id="borrow2">  PriceHere  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img class = "moreInfo" id="CPSource2" src = "images/capital.jpg" /></li>
+				<li> AMTS Insur. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class = "priceDisplay" id="borrow3">  PriceHere  </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img class = "moreInfo" id="CPSource3" src = "images/capital.jpg" /></li>	
+		</div>
+		<div class = "box" id="graph">
+			<svg id ="stockGraph"> </svg>
+		</div>
+		<div class = "box" id="buttonDisplay">
+			<div class="box stockButton" id="stockButton1"> 
+				<h2>Buy Stock#1</h2>
+				<p>Current Price</p>
+				<p class="priceDisplay price1"> PriceHere </p>
+			</div>
+			<div class="box stockButton" id="stockButton2">
+				<h2>Buy Stock#2</h2>
+				<p>Current Price</p>
+				<p class="priceDisplay price2"> PriceHere </p>
+			</div>
+			<div class="box stockButton" id="stockButton3">
+				<h2>Buy Stock#3</h2>
+				<p>Current Price</p>
+				<p class="priceDisplay price3"> PriceHere </p>
+			</div>
+		</div>
+	</div>
+	<script src="jquery-2.1.4.min.js"></script>
+	<script src="d3.min.js"></script>
+	<script src="script.js"></script>
+
+</body>
+</html>

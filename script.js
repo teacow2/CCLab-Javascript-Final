@@ -1,3 +1,7 @@
+var APIKey = "My Key";
+var realStockName = new Array(3);
+var realStockPrice = new Array(3);
+
 var currentCash = 4000;
 var currentWorth = 0; 
 var stockPrice1 = 50.41;
@@ -21,6 +25,57 @@ var w = 1050;
 var h = 270;
 
 var lineScale = 25;
+
+
+var init = function() {
+  console.log("Ticker started");
+
+ // var tickerURL = "http://marketdata.websol.barchart.com/getQuote.json?key=" + APIKey + "&symbols=ZC*1,IBM,GOOGL^EURUSD";
+    var tickerURL = "http://marketdata.websol.barchart.com/getQuote.json?key=0eb9cf029eb546c8ceac535bc6f69b28&symbols=ZC*1,IBM,GOOGL,^EURUSD";
+
+  $.ajax ({
+    url : tickerURL,
+    dataType: "jsonp",
+    type: "GET", 
+    crossDomain: true,
+    success: function(response){
+          console.log("Got Prices");
+          displayTicker(response);
+        }, 
+      error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+      }
+      });
+
+}
+
+
+var displayTicker = function() {
+
+  console.log("Ticker Displayed!")
+
+  if(response.response.error) {
+    alert(response.response.error.description); 
+    return;
+  }
+
+  var realStockInfo = JSON.parse(response);
+
+  for(var i = 0; i<2; i++ ){
+    realStockName[i] = realStockInfo.results.symbol[i] + "&nbsp;&nbsp;" + realStockInfo.results.name[i];
+    realStockPrice[i] = realStockInfo.results.lastPrice;  
+  }
+  
+  $("#realStockPrice1 + .stockName").html(realStockName[0]);
+  $("#realStockPrice1 + .stockPrice").html(realStockPrice[0]);
+  $("#realStockPrice2 + .stockName").html(realStockName[1]);
+  $("#realStockPrice2 + .stockPrice").html(realStockPrice[1]);
+  $("#realStockPrice3 + .stockName").html(realStockName[2]);
+  $("#realStockPrice3 + .stockPrice").html(realStockPrice[2]);
+}
+
+
 
 
 d3.csv(stockStatsFile, function(error, data) {
@@ -166,5 +221,7 @@ $('#CPSource3').click(function() {
 	$('.woot').html('Woot Capital!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Current Worth: $' + currentWorth + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current Cash: $' + currentCash);
 })
 
-
+$(document).ready(function() {
+  init();
+});
 
